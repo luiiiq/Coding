@@ -1,0 +1,43 @@
+.termos {
+    padding: 40px 30px;
+}
+
+.termos h1{
+   font-size: 2em;
+   font-weight: normal;
+   font-family: "Poppins",serif;
+   line-height: 1.6;
+}
+
+.termos-item {
+    margin-top: 1.3em;
+}
+
+.termos-item h2 {
+    font-size: 1.4em !important;
+    font-weight: 400;
+    font-family: "Poppins",serif;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.termos-item p {
+    font-size: 1.2em;
+    max-width: 80ch;
+    margin-bottom: 20px;
+    line-height: 1.3;
+    color: #3d404e;
+}
+
+@media(max-width:495px) {
+    .termos h1{
+        font-size: 1.6em !important;
+     }
+     .termos-item h2 {
+         font-size: 1.4em !important;
+     }
+     
+     .termos-item p {
+         font-size: 1.11em !important;
+     }
+}

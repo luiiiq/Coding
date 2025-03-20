@@ -1,0 +1,247 @@
+.formulario {
+    display: grid;
+    grid-template-columns: minmax(700px,750px) 1fr;
+}
+
+.form {
+    display: grid;
+    grid-template-columns:350px auto;
+    gap: 20px;
+    padding-bottom: 1.5em;
+}
+
+.form label, .form select {
+    display: block;
+    font: 400 1.2rem/1.5 "Poppins", serif;
+    margin-bottom: 4px;
+}
+
+.form > div, .form button {
+    grid-column: 1;
+    padding-left: 20px;
+}
+
+.form input[type="text"],
+.form input[type="email"],
+.form select {
+    font: 1rem/1.5;
+    background: #f5f3f3;
+    border: 1.5px solid #e2dede;
+    padding: 12px;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form input[type="text"]:focus,
+.form input[type="email"]:focus,
+.form select:focus {
+    outline: none;
+    border-color: #025E8C;
+    background: white;
+    box-shadow: 0 0 0 1px #A1FCFF;
+}
+
+.form .col-2 {
+    grid-column: span 2;
+}
+
+.form h2 {
+    font: 500 1.4em/1 "Poppins",serif;
+    grid-column: 1;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+.form h2:before {
+    content: '';
+    width: 4px;
+    height: 13px;
+    background: linear-gradient(#A1FCFF,#025E8C);
+    display: inline-block;
+    transform: rotate(90deg);
+}
+.form div:nth-child(4), .form div:nth-child(10) {
+    margin-bottom: 1em;
+}
+
+.form .coluna2 {
+    grid-column: 2;
+}
+
+.pagamento label {
+    display: inline-block;
+    margin-bottom: 0px;
+}
+
+.pagamento-conteudo p, .form .credito p:first-child {
+    font-size: 1.2em;
+    padding-left: 20px;
+    grid-column: span 2;
+}
+.form .pix {
+   grid-column:  span 2;
+}
+
+.form .credito p:first-child{
+    min-width: 350px !important;
+}
+
+.pix label, label[for="credito"] {
+    background: #09F9FF;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #0B0D17;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.pix label::before, label[for="credito"]::before {
+   content: '';
+   display: inline-block;
+   width: 12px;
+   height: 12px;
+   border: 1px solid #0B0D17;
+   border-radius: 50%;
+   margin-right: 8px;
+   box-sizing: border-box;
+}
+
+.pix input:checked + label::before, .credito input[value="credito"]:checked + label[for="credito"]::before {
+    border-color: #09F9FF;
+    box-shadow: inset 0 0 0 3px #09F9FF, inset 0 0 0 6px #0B0D17;
+}
+
+.form-dados {
+    background: #0B0D17;
+    color:#f5f3f3;
+    padding: 30px;
+}
+
+.credito {
+    padding-top: 10px;
+}
+
+.pagamento-conteudo, .credito-conteudo {
+    display: none;
+}
+.pagamento-conteudo p {
+    line-height: 1.4;
+}
+#pix:checked + label , #credito:checked + label{
+   border: 2px solid #f5f5f5;
+   background: #0B0D17;
+   color: #A1FCFF;
+   font-size: 20px;
+}
+
+#pix:checked ~ .pagamento-conteudo, #credito:checked ~ #credito-conteudo {
+    display: block;
+}
+
+input[type="radio"] {
+    opacity: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+input::placeholder, .form option {
+    font: 300 1em/1 "Poppins",serif;
+}
+
+.form button {
+    margin-top: 1em;
+    color: #09F9FF;
+    background-color: #0B0D17; 
+    border: 1px solid #03b1b4;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-left: 20px;
+    box-shadow: 2px 2px 2px 0px #03b1b4 ;
+    cursor: pointer;
+}
+
+.formulario .plano-item {
+    grid-column: 2;
+    margin: 0px;
+    grid-row: 2;
+    justify-self: start;
+}
+
+.formulario-plano {
+    padding: 30px;
+    background: #2b3044;
+}
+
+.formulario-plano h1 {
+    color: #f5f5f5;
+    font: 600 1.5em/1 "Poppins",serif;
+    margin-bottom: 30px;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.checkbox label {
+    min-width: 600px;
+}
+
+.checkbox a {
+    color: #09F9FF;
+    text-decoration:underline;
+}
+
+.checkbox-grande {
+    transform: scale(1.5);
+}
+
+@media(max-width:1240px) {
+    .formulario {
+        grid-template-columns: 1fr !important
+    }
+
+    .formulario-plano {
+        grid-column: span 2;
+    }
+
+    .plano-item {
+        justify-self: center !important;
+    }
+    
+    .formulario-plano h1 {
+        justify-self: center !important;
+    }
+}
+
+@media(max-width:720px) {
+    .form {
+        grid-template-columns: minmax(300px,350px) !important;
+    }
+    .form .credito p:first-child{
+        min-width: 310px !important;
+    }
+
+    .form .coluna2 {
+        grid-column: 1 !important;
+    }
+    
+    .checkbox label {
+        min-width: 300px !important;
+    }
+}
+
+@media(max-width:410px) {
+    .form {
+        grid-template-columns: minmax(240px,270px) !important;
+    }
+    .form .credito p:first-child{
+        min-width: 240px !important;
+    }
+    
+    .checkbox label {
+        min-width: 220px !important;
+    }
+}
